@@ -7,6 +7,7 @@
 <meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 
@@ -228,18 +229,6 @@ $(document).ready(function () {
 }
 </style>
 
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
-
 <!-- code folding -->
 
 
@@ -373,7 +362,7 @@ RMarkdown lab files for various topics. Replace ‘topic’ with a short name of
 <p>The website is rendered by running <code>rmarkdown::render_site()</code> in the project directory. This generates the HTML files and all other necessary files (including the assets, images and data directories) and moves them into a directory named <strong>docs</strong>. Open <strong>docs/index.html</strong> to start. The output directory is set to <strong>docs</strong> because this GitHub repo uses the <strong>docs</strong> directory as the Github pages (rendered content) source.</p>
 <p>For testing purposes, you can run <code>rmarkdown::render(&quot;bla.Rmd&quot;)</code> on individual Rmd files. This is a time-saver as the whole website need not be rendered just to preview this one file.</p>
 <hr />
-<p><strong>2019</strong> NBIS | SciLifeLab</p>
+<p><strong>2019</strong> NBIS | SciLifeLab # rnaseq_201911</p>
 </div>
 </div>
 
@@ -415,6 +404,23 @@ $(document).ready(function () {
 
 
 </script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

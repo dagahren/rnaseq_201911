@@ -7,9 +7,10 @@
 <meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="Roy Francis • 14-May-2019" />
+<meta name="author" content="Roy Francis • 03-Oct-2019" />
 
 
 <title>Downloads</title>
@@ -80,7 +81,7 @@ code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Inf
       if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
       var style = rule.style.cssText;
       // check if color or background-color is set
-      if (rule.style.color === '' || rule.style.backgroundColor === '') continue;
+      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
       // replace div.sourceCode by a pre.sourceCode rule
       sheets[i].deleteRule(j);
       sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
@@ -299,48 +300,9 @@ $(document).ready(function () {
 }
 </style>
 
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
-
 <!-- code folding -->
 
 
-
-<script>
-$(document).ready(function ()  {
-
-    // move toc-ignore selectors from section div to header
-    $('div.section.toc-ignore')
-        .removeClass('toc-ignore')
-        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
-
-    // establish options
-    var options = {
-      selectors: "h1,h2,h3,h4",
-      theme: "bootstrap3",
-      context: '.toc-content',
-      hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
-      },
-      ignoreSelector: ".toc-ignore",
-      scrollTo: 0
-    };
-    options.showAndHide = true;
-    options.smoothScroll = true;
-
-    // tocify
-    var toc = $("#TOC").tocify(options).data("toc-tocify");
-});
-</script>
 
 <style type="text/css">
 
@@ -389,8 +351,6 @@ div.tocify {
 
 .tocify-subheader .tocify-item {
   font-size: 0.90em;
-  padding-left: 25px;
-  text-indent: 0;
 }
 
 .tocify .list-group-item {
@@ -483,7 +443,7 @@ div.tocify {
 
 <h1 class="title toc-ignore">Downloads</h1>
 <h3 class="subtitle">Workshop on RNA-Seq</h3>
-<h4 class="author"><b>Roy Francis</b> • 14-May-2019</h4>
+<h4 class="author"><b>Roy Francis</b> • 03-Oct-2019</h4>
 
 </div>
 
@@ -512,10 +472,10 @@ R
 
 <span class="kw">listMarts</span>()</code></pre></div>
 <pre><code>##                biomart               version
-## 1 ENSEMBL_MART_ENSEMBL      Ensembl Genes 96
-## 2   ENSEMBL_MART_MOUSE      Mouse strains 96
-## 3     ENSEMBL_MART_SNP  Ensembl Variation 96
-## 4 ENSEMBL_MART_FUNCGEN Ensembl Regulation 96</code></pre>
+## 1 ENSEMBL_MART_ENSEMBL      Ensembl Genes 98
+## 2   ENSEMBL_MART_MOUSE      Mouse strains 98
+## 3     ENSEMBL_MART_SNP  Ensembl Variation 98
+## 4 ENSEMBL_MART_FUNCGEN Ensembl Regulation 98</code></pre>
 </div>
 <p>We will use the code below to find the name of the Human ensembl genes dataset under ensembl mart.</p>
 <div class="block-title-parent">
@@ -528,7 +488,7 @@ ds &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(<span cla
 <span class="co"># find all rows in dataset &#39;ds&#39; where column &#39;description&#39; contains the string &#39;human&#39;</span>
 ds[<span class="kw">grepl</span>(<span class="st">&quot;human&quot;</span>,<span class="kw">tolower</span>(ds<span class="op">$</span>description)),]</code></pre></div>
 <pre><code>##                  dataset              description    version
-## 73 hsapiens_gene_ensembl Human genes (GRCh38.p12) GRCh38.p12</code></pre>
+## 85 hsapiens_gene_ensembl Human genes (GRCh38.p13) GRCh38.p13</code></pre>
 </div>
 <p>Now that we know the name of the dataset, we can list all the columns (filters) in this dataset.</p>
 <div class="block-title-parent">
@@ -553,9 +513,11 @@ la &lt;-<span class="st"> </span><span class="kw">listAttributes</span>(<span cl
 R
 </div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">searchAttributes</span>(<span class="dt">mart=</span>mart,<span class="dt">pattern=</span><span class="st">&quot;entrez&quot;</span>)</code></pre></div>
-<pre><code>##                     name                   description         page
-## 55 entrezgene_trans_name EntrezGene transcript name ID feature_page
-## 74            entrezgene                  NCBI gene ID feature_page</code></pre>
+<pre><code>##                      name                   description         page
+## 58  entrezgene_trans_name EntrezGene transcript name ID feature_page
+## 78 entrezgene_description         NCBI gene description feature_page
+## 79   entrezgene_accession           NCBI gene accession feature_page
+## 80          entrezgene_id                  NCBI gene ID feature_page</code></pre>
 </div>
 <p>We create a vector of our columns of interest.</p>
 <div class="block-title-parent">
@@ -694,68 +656,65 @@ human_genes &lt;-<span class="st"> </span><span class="kw">getLDS</span>(<span c
 Output
 </div>
 <pre><code>## R version 3.5.2 (2018-12-20)
-## Platform: x86_64-pc-linux-gnu (64-bit)
-## Running under: Ubuntu 18.04.2 LTS
+## Platform: x86_64-apple-darwin15.6.0 (64-bit)
+## Running under: macOS High Sierra 10.13.6
 ## 
 ## Matrix products: default
-## BLAS: /usr/lib/x86_64-linux-gnu/blas/libblas.so.3.7.1
-## LAPACK: /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.7.1
+## BLAS: /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib
+## LAPACK: /Library/Frameworks/R.framework/Versions/3.5/Resources/lib/libRlapack.dylib
 ## 
 ## locale:
-##  [1] LC_CTYPE=en_GB.UTF-8       LC_NUMERIC=C              
-##  [3] LC_TIME=en_GB.UTF-8        LC_COLLATE=en_GB.UTF-8    
-##  [5] LC_MONETARY=en_GB.UTF-8    LC_MESSAGES=en_GB.UTF-8   
-##  [7] LC_PAPER=en_GB.UTF-8       LC_NAME=C                 
-##  [9] LC_ADDRESS=C               LC_TELEPHONE=C            
-## [11] LC_MEASUREMENT=en_GB.UTF-8 LC_IDENTIFICATION=C       
+## [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
 ## 
 ## attached base packages:
-## [1] parallel  stats4    stats     datasets  grDevices utils     graphics 
+## [1] parallel  stats4    stats     graphics  grDevices utils     datasets 
 ## [8] methods   base     
 ## 
 ## other attached packages:
-##  [1] pheatmap_1.0.12             edgeR_3.24.3               
-##  [3] limma_3.38.3                biomaRt_2.39.3             
-##  [5] ggplot2_3.1.1               dplyr_0.8.0.1              
-##  [7] leaflet_2.0.2               captioner_2.2.3            
-##  [9] bookdown_0.9                knitr_1.22                 
-## [11] DESeq2_1.22.2               SummarizedExperiment_1.12.0
-## [13] DelayedArray_0.8.0          BiocParallel_1.16.6        
-## [15] matrixStats_0.54.0          Biobase_2.42.0             
-## [17] GenomicRanges_1.34.0        GenomeInfoDb_1.18.2        
-## [19] IRanges_2.16.0              S4Vectors_0.20.1           
-## [21] BiocGenerics_0.28.0        
+##  [1] pvclust_2.0-0               rafalib_1.0.0              
+##  [3] pheatmap_1.0.12             edgeR_3.24.3               
+##  [5] limma_3.38.3                DESeq2_1.22.2              
+##  [7] SummarizedExperiment_1.12.0 DelayedArray_0.8.0         
+##  [9] BiocParallel_1.16.6         matrixStats_0.54.0         
+## [11] Biobase_2.42.0              GenomicRanges_1.34.0       
+## [13] GenomeInfoDb_1.18.2         IRanges_2.16.0             
+## [15] S4Vectors_0.20.1            BiocGenerics_0.28.0        
+## [17] biomaRt_2.38.0              ggplot2_3.2.1              
+## [19] dplyr_0.8.3                 leaflet_2.0.2              
+## [21] captioner_2.2.3             bookdown_0.12              
+## [23] knitr_1.24                 
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] nlme_3.1-137           bitops_1.0-6           bit64_0.9-7           
-##  [4] RColorBrewer_1.1-2     progress_1.2.0         httr_1.4.0            
+##  [1] nlme_3.1-141           bitops_1.0-6           bit64_0.9-7           
+##  [4] RColorBrewer_1.1-2     progress_1.2.2         httr_1.4.1            
 ##  [7] tools_3.5.2            backports_1.1.4        R6_2.4.0              
-## [10] rpart_4.1-13           mgcv_1.8-26            Hmisc_4.2-0           
+## [10] rpart_4.1-15           mgcv_1.8-28            Hmisc_4.2-0           
 ## [13] DBI_1.0.0              lazyeval_0.2.2         colorspace_1.4-1      
 ## [16] nnet_7.3-12            withr_2.1.2            tidyselect_0.2.5      
-## [19] gridExtra_2.3          prettyunits_1.0.2      curl_3.3              
-## [22] bit_1.1-14             compiler_3.5.2         htmlTable_1.13.1      
-## [25] labeling_0.3           scales_1.0.0           checkmate_1.9.1       
-## [28] genefilter_1.64.0      stringr_1.4.0          digest_0.6.18         
-## [31] foreign_0.8-71         rmarkdown_1.12         XVector_0.22.0        
-## [34] base64enc_0.1-3        pkgconfig_2.0.2        htmltools_0.3.6       
-## [37] htmlwidgets_1.3        rlang_0.3.4            rstudioapi_0.10       
-## [40] RSQLite_2.1.1          shiny_1.3.2            jsonlite_1.6          
-## [43] crosstalk_1.0.0        acepack_1.4.1          RCurl_1.95-4.12       
-## [46] magrittr_1.5           GenomeInfoDbData_1.2.0 Formula_1.2-3         
-## [49] Matrix_1.2-15          Rcpp_1.0.1             munsell_0.5.0         
-## [52] stringi_1.4.3          yaml_2.2.0             zlibbioc_1.28.0       
-## [55] plyr_1.8.4             grid_3.5.2             blob_1.1.1            
-## [58] promises_1.0.1         crayon_1.3.4           lattice_0.20-38       
-## [61] cowplot_0.9.4          splines_3.5.2          annotate_1.60.1       
-## [64] hms_0.4.2              locfit_1.5-9.1         pillar_1.3.1          
-## [67] ggpubr_0.2             geneplotter_1.60.0     XML_3.98-1.19         
-## [70] glue_1.3.1             evaluate_0.13          latticeExtra_0.6-28   
-## [73] data.table_1.12.2      httpuv_1.5.1           tidyr_0.8.3           
-## [76] gtable_0.3.0           purrr_0.3.2            assertthat_0.2.1      
-## [79] xfun_0.6               mime_0.6               xtable_1.8-3          
-## [82] later_0.8.0            survival_2.43-3        tibble_2.1.1          
-## [85] AnnotationDbi_1.44.0   memoise_1.1.0          cluster_2.0.7-1</code></pre>
+## [19] gridExtra_2.3          prettyunits_1.0.2      bit_1.1-14            
+## [22] compiler_3.5.2         htmlTable_1.13.1       labeling_0.3          
+## [25] checkmate_1.9.4        scales_1.0.0           genefilter_1.64.0     
+## [28] stringr_1.4.0          digest_0.6.20          foreign_0.8-72        
+## [31] rmarkdown_1.14         XVector_0.22.0         base64enc_0.1-3       
+## [34] pkgconfig_2.0.2        htmltools_0.3.6        htmlwidgets_1.3       
+## [37] rlang_0.4.0            rstudioapi_0.10        RSQLite_2.1.2         
+## [40] shiny_1.3.2            jsonlite_1.6           crosstalk_1.0.0       
+## [43] acepack_1.4.1          RCurl_1.95-4.12        magrittr_1.5          
+## [46] GenomeInfoDbData_1.2.0 Formula_1.2-3          Matrix_1.2-17         
+## [49] Rcpp_1.0.2             munsell_0.5.0          stringi_1.4.3         
+## [52] yaml_2.2.0             zlibbioc_1.28.0        grid_3.5.2            
+## [55] blob_1.2.0             promises_1.0.1         crayon_1.3.4          
+## [58] lattice_0.20-38        cowplot_1.0.0          splines_3.5.2         
+## [61] annotate_1.60.1        hms_0.5.0              locfit_1.5-9.1        
+## [64] zeallot_0.1.0          pillar_1.4.2           ggpubr_0.2.3          
+## [67] ggsignif_0.6.0         geneplotter_1.60.0     XML_3.98-1.20         
+## [70] glue_1.3.1             evaluate_0.14          latticeExtra_0.6-28   
+## [73] data.table_1.12.2      vctrs_0.2.0            httpuv_1.5.1          
+## [76] gtable_0.3.0           purrr_0.3.2            tidyr_0.8.3           
+## [79] assertthat_0.2.1       xfun_0.8               mime_0.7              
+## [82] xtable_1.8-4           later_0.8.0            rsconnect_0.8.15      
+## [85] survival_2.44-1.1      tibble_2.1.3           AnnotationDbi_1.44.0  
+## [88] memoise_1.1.0          cluster_2.1.0</code></pre>
 </div>
 </div>
 
@@ -798,6 +757,49 @@ $(document).ready(function () {
 });
 
 
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3,h4",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
 </script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
