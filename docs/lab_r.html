@@ -657,20 +657,20 @@ x
 
 <span class="co"># sort</span>
 <span class="kw">sort</span>(x)</code></pre></div>
-<pre><code>##  [1] 145  72  26  99  11 161 191 149  79  56
+<pre><code>##  [1]  71 116  31  27  60  54  10 181 187 180
 ## [1] 10
-## [1] 989
-## [1] 98.9
-## [1] 89
-## [1] 11
-##  [1] 4.976734 4.276666 3.258097 4.595120 2.397895 5.081404 5.252273
-##  [8] 5.003946 4.369448 4.025352
-##  [1] 9.390741e+62 1.858672e+31 1.957296e+11 9.889030e+42 5.987414e+04
-##  [6] 8.344716e+69 8.917560e+82 5.127171e+64 2.038281e+34 2.091659e+24
-##  [1] 12.041595  8.485281  5.099020  9.949874  3.316625 12.688578 13.820275
-##  [8] 12.206556  8.888194  7.483315
-##  [1] 145  72  26  99  11 161 191 149  79  56
-##  [1]  11  26  56  72  79  99 145 149 161 191</code></pre>
+## [1] 917
+## [1] 91.7
+## [1] 65.5
+## [1] 10
+##  [1] 4.262680 4.753590 3.433987 3.295837 4.094345 3.988984 2.302585
+##  [8] 5.198497 5.231109 5.192957
+##  [1] 6.837671e+30 2.388691e+50 2.904885e+13 5.320482e+11 1.142007e+26
+##  [6] 2.830753e+23 2.202647e+04 4.048566e+78 1.633308e+81 1.489384e+78
+##  [1]  8.426150 10.770330  5.567764  5.196152  7.745967  7.348469  3.162278
+##  [8] 13.453624 13.674794 13.416408
+##  [1]  71 116  31  27  60  54  10 181 187 180
+##  [1]  10  27  31  54  60  71 116 180 181 187</code></pre>
 </div>
 <p>Some useful string functions.</p>
 <div class="block-title-parent">
@@ -1090,52 +1090,55 @@ Output
 ## [8] methods   base     
 ## 
 ## other attached packages:
-##  [1] fgsea_1.8.0                 Rcpp_1.0.2                 
-##  [3] enrichR_2.1                 pvclust_2.0-0              
-##  [5] rafalib_1.0.0               pheatmap_1.0.12            
-##  [7] edgeR_3.24.3                limma_3.38.3               
-##  [9] DESeq2_1.22.2               SummarizedExperiment_1.12.0
-## [11] DelayedArray_0.8.0          BiocParallel_1.16.6        
-## [13] matrixStats_0.54.0          Biobase_2.42.0             
-## [15] GenomicRanges_1.34.0        GenomeInfoDb_1.18.2        
-## [17] IRanges_2.16.0              S4Vectors_0.20.1           
-## [19] BiocGenerics_0.28.0         biomaRt_2.38.0             
-## [21] ggplot2_3.2.1               dplyr_0.8.3                
-## [23] leaflet_2.0.2               captioner_2.2.3            
-## [25] bookdown_0.12               knitr_1.24                 
+##  [1] formattable_0.2.0.1         kableExtra_1.1.0           
+##  [3] lubridate_1.7.4             fgsea_1.8.0                
+##  [5] Rcpp_1.0.2                  enrichR_2.1                
+##  [7] pvclust_2.0-0               rafalib_1.0.0              
+##  [9] pheatmap_1.0.12             edgeR_3.24.3               
+## [11] limma_3.38.3                DESeq2_1.22.2              
+## [13] SummarizedExperiment_1.12.0 DelayedArray_0.8.0         
+## [15] BiocParallel_1.16.6         matrixStats_0.54.0         
+## [17] Biobase_2.42.0              GenomicRanges_1.34.0       
+## [19] GenomeInfoDb_1.18.2         IRanges_2.16.0             
+## [21] S4Vectors_0.20.1            BiocGenerics_0.28.0        
+## [23] biomaRt_2.38.0              ggplot2_3.2.1              
+## [25] dplyr_0.8.3                 leaflet_2.0.2              
+## [27] captioner_2.2.3             bookdown_0.12              
+## [29] knitr_1.24                 
 ## 
 ## loaded via a namespace (and not attached):
 ##  [1] colorspace_1.4-1       ggsignif_0.6.0         rjson_0.2.20          
 ##  [4] rsconnect_0.8.15       htmlTable_1.13.1       XVector_0.22.0        
 ##  [7] base64enc_0.1-3        rstudioapi_0.10        ggpubr_0.2.3          
-## [10] bit64_0.9-7            AnnotationDbi_1.44.0   splines_3.5.2         
-## [13] geneplotter_1.60.0     zeallot_0.1.0          Formula_1.2-3         
-## [16] jsonlite_1.6           annotate_1.60.1        cluster_2.1.0         
-## [19] shiny_1.3.2            compiler_3.5.2         httr_1.4.1            
-## [22] backports_1.1.4        assertthat_0.2.1       Matrix_1.2-17         
-## [25] lazyeval_0.2.2         later_0.8.0            acepack_1.4.1         
-## [28] htmltools_0.3.6        prettyunits_1.0.2      tools_3.5.2           
-## [31] gtable_0.3.0           glue_1.3.1             GenomeInfoDbData_1.2.0
-## [34] fastmatch_1.1-0        vctrs_0.2.0            nlme_3.1-141          
-## [37] crosstalk_1.0.0        xfun_0.8               stringr_1.4.0         
-## [40] mime_0.7               XML_3.98-1.20          zlibbioc_1.28.0       
-## [43] scales_1.0.0           hms_0.5.0              promises_1.0.1        
-## [46] RColorBrewer_1.1-2     yaml_2.2.0             curl_4.0              
-## [49] memoise_1.1.0          gridExtra_2.3          rpart_4.1-15          
-## [52] latticeExtra_0.6-28    stringi_1.4.3          RSQLite_2.1.2         
-## [55] genefilter_1.64.0      checkmate_1.9.4        rlang_0.4.0           
-## [58] pkgconfig_2.0.2        bitops_1.0-6           evaluate_0.14         
-## [61] lattice_0.20-38        purrr_0.3.2            htmlwidgets_1.3       
-## [64] labeling_0.3           cowplot_1.0.0          bit_1.1-14            
-## [67] tidyselect_0.2.5       magrittr_1.5           R6_2.4.0              
-## [70] Hmisc_4.2-0            DBI_1.0.0              pillar_1.4.2          
-## [73] foreign_0.8-72         withr_2.1.2            mgcv_1.8-28           
-## [76] survival_2.44-1.1      RCurl_1.95-4.12        nnet_7.3-12           
-## [79] tibble_2.1.3           crayon_1.3.4           rmarkdown_1.14        
-## [82] progress_1.2.2         locfit_1.5-9.1         grid_3.5.2            
-## [85] data.table_1.12.2      blob_1.2.0             digest_0.6.20         
-## [88] xtable_1.8-4           tidyr_0.8.3            httpuv_1.5.1          
-## [91] munsell_0.5.0</code></pre>
+## [10] bit64_0.9-7            AnnotationDbi_1.44.0   xml2_1.2.2            
+## [13] splines_3.5.2          geneplotter_1.60.0     zeallot_0.1.0         
+## [16] Formula_1.2-3          jsonlite_1.6           annotate_1.60.1       
+## [19] cluster_2.1.0          shiny_1.3.2            readr_1.3.1           
+## [22] compiler_3.5.2         httr_1.4.1             backports_1.1.4       
+## [25] assertthat_0.2.1       Matrix_1.2-17          lazyeval_0.2.2        
+## [28] later_0.8.0            acepack_1.4.1          htmltools_0.3.6       
+## [31] prettyunits_1.0.2      tools_3.5.2            gtable_0.3.0          
+## [34] glue_1.3.1             GenomeInfoDbData_1.2.0 fastmatch_1.1-0       
+## [37] vctrs_0.2.0            nlme_3.1-141           crosstalk_1.0.0       
+## [40] xfun_0.8               stringr_1.4.0          rvest_0.3.4           
+## [43] mime_0.7               XML_3.98-1.20          zlibbioc_1.28.0       
+## [46] scales_1.0.0           hms_0.5.0              promises_1.0.1        
+## [49] RColorBrewer_1.1-2     yaml_2.2.0             curl_4.0              
+## [52] memoise_1.1.0          gridExtra_2.3          rpart_4.1-15          
+## [55] latticeExtra_0.6-28    stringi_1.4.3          RSQLite_2.1.2         
+## [58] genefilter_1.64.0      checkmate_1.9.4        rlang_0.4.0           
+## [61] pkgconfig_2.0.2        bitops_1.0-6           evaluate_0.14         
+## [64] lattice_0.20-38        purrr_0.3.2            htmlwidgets_1.3       
+## [67] labeling_0.3           cowplot_1.0.0          bit_1.1-14            
+## [70] tidyselect_0.2.5       magrittr_1.5           R6_2.4.0              
+## [73] Hmisc_4.2-0            DBI_1.0.0              pillar_1.4.2          
+## [76] foreign_0.8-72         withr_2.1.2            mgcv_1.8-28           
+## [79] survival_2.44-1.1      RCurl_1.95-4.12        nnet_7.3-12           
+## [82] tibble_2.1.3           crayon_1.3.4           rmarkdown_1.14        
+## [85] progress_1.2.2         locfit_1.5-9.1         grid_3.5.2            
+## [88] data.table_1.12.2      blob_1.2.0             webshot_0.5.1         
+## [91] digest_0.6.20          xtable_1.8-4           tidyr_0.8.3           
+## [94] httpuv_1.5.1           munsell_0.5.0          viridisLite_0.3.0</code></pre>
 </div>
 <p><strong>End of document</strong></p>
 </div>
