@@ -1,0 +1,36 @@
+date	room	dur	topic	person	link_presentation	link_lab	link_room
+26/11/2019	"Retina, D227 "	40	Welcome	Dag Ahrén			https://tinyurl.com/yyaf3zbb
+		40	RNA Introduction	Dag Ahrén	presentations/RNA_introduction.pdf		
+		20	Coffee Break				
+		40	RNA-Seq Introduction	Dag Ahrén	presentations/RNAseq_Introduction.pdf		
+		40	Unix & Uppmax	Dag Ahrén	presentations/Uppmax.pdf		
+		60	Lunch				
+		40	Pre-alignment QC	TBA	presentations/After_sequencing_QC.pdf	lab_qc.html	
+		40	Mapping	TBA	presentations/RNAseq_aligners.pdf	lab_mapping.html	
+		40	Post-alignment QC	TBA	presentations/After_mapping_QC.pdf	lab_qc.html	
+		20	Coffee Break				
+		40	Pseudoaligners	TBA	presentations/Pseudoaligners.pdf	lab_kallisto.html	
+		40	Quantification	TBA	presentations/Quantification.pdf	lab_quantification.html	
+27/11/2019	"Retina, D227 "	40	Intro to R	TBA		lab_r.html	https://tinyurl.com/yyaf3zbb
+		40	Retrieving Data	TBA		lab_download.html	
+		20	Coffee Break				
+		40	Data Preprocessing	TBA	presentations/presentation_dge.html	lab_dge.html	
+		40	Normalisation	TBA			
+		60	Lunch				
+		40	Exploratory Analyses	TBA			
+		40	DGE	TBA			
+		40	DGE	TBA			
+		20	Coffee Break				
+		40	DGE Visualisation	TBA			
+		40	DGE Visualisation	TBA			
+28/11/2019	"Retina, D227 "	40	PCA	TBA	presentations/presentation_pca.pdf	lab_eda.html	https://tinyurl.com/yyaf3zbb
+		40	Hierarchical Clustering	TBA	presentations/presentation_clustering.pdf	lab_eda.html	
+		20	Coffee Break				
+		40	Hierarchical Clustering	TBA			
+		40	GSA & GSEA	TBA	presentations/presentation_functional.pdf	lab_functional.html	
+		60	Lunch				
+		40	GSA & GSEA	TBA			
+		40	GEO	TBA			
+		40	Free Exercises	TBA			
+		20	Coffee Break				
+		40	Conclusion	TBA			
