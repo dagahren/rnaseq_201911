@@ -3,7 +3,7 @@
   <head>
     <title>Differential Gene Expression Workflow</title>
     <meta charset="utf-8" />
-    <meta name="author" content="Roy Francis | 12-May-2019" />
+    <meta name="author" content="Roy Francis | 08-Oct-2019" />
     <meta name="keywords" content="bioinformatics, course, scilifelab, nbis" />
     <link href="libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
     <link href="libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
@@ -16,7 +16,8 @@ class: center, middle, inverse, title-slide
 
 # Differential Gene Expression Workflow
 ## Workshop on RNA-Seq
-### <b>Roy Francis</b> | 12-May-2019
+### <b>Roy Francis</b> | 08-Oct-2019
+### NBIS, SciLifeLab
 
 ---
 
@@ -427,20 +428,20 @@ head(res1)
 ## DataFrame with 6 rows and 6 columns
 ##                         baseMean     log2FoldChange              lfcSE
 ##                        &lt;numeric&gt;          &lt;numeric&gt;          &lt;numeric&gt;
-## ENSG00000000003 490.017213130775  0.220619809383656  0.112761083788383
-## ENSG00000000419 817.780657499214 0.0592719659601406  0.101481284662652
-## ENSG00000000457  82.078767893562  0.207748623172909  0.220404896514001
-## ENSG00000000460  356.07160020304 -0.129186381676072  0.115139182335103
-## ENSG00000001036 919.606750211436 0.0288826917736355 0.0851500691928604
-## ENSG00000001084 529.593965301543  0.211964772147193 0.0929810563117334
+## ENSG00000000003 490.017213130775  0.220619809383817  0.112761083786837
+## ENSG00000000419 817.780657499214 0.0592719659603648  0.101481284660981
+## ENSG00000000457  82.078767893562  0.207748623173336  0.220404896511899
+## ENSG00000000460  356.07160020304 -0.129186381676168  0.115139182333228
+## ENSG00000001036 919.606750211436 0.0288826917736049  0.085150069191275
+## ENSG00000001084 529.593965301543  0.211964772147083 0.0929810563101642
 ##                              stat             pvalue              padj
 ##                         &lt;numeric&gt;          &lt;numeric&gt;         &lt;numeric&gt;
-## ENSG00000000003  1.95652437854969 0.0504034135093116 0.263505451695327
-## ENSG00000000419 0.584067950629267  0.559174596319379 0.830262316260423
-## ENSG00000000457 0.942577168015466   0.34589722283592 0.689945926100409
-## ENSG00000000460 -1.12200190288033    0.2618616308297 0.612624613846088
-## ENSG00000001036  0.33919751384133  0.734460942036292 0.909638554355053
-## ENSG00000001084  2.27965545408033 0.0226281312376226 0.159263252830742
+## ENSG00000000003  1.95652437857795 0.0504034135059863 0.263505451677943
+## ENSG00000000419 0.584067950641097   0.55917459631142 0.830262316253793
+## ENSG00000000457 0.942577168026391   0.34589722283033 0.689945926089258
+## ENSG00000000460 -1.12200190289945  0.261861630821574 0.612624613827207
+## ENSG00000001036 0.339197513847286  0.734460942031804 0.909638554349496
+## ENSG00000001084  2.27965545411762 0.0226281312354094 0.159263252815164
 ```
 
 --
@@ -467,11 +468,11 @@ count: false
 
 
 .end-text[
-&lt;p&gt;R version 3.5.2 (2018-12-20)&lt;br&gt;&lt;p&gt;Platform: x86_64-pc-linux-gnu (64-bit)&lt;/p&gt;&lt;p&gt;OS: Ubuntu 18.04.2 LTS&lt;/p&gt;&lt;br&gt;
+&lt;p&gt;R version 3.5.2 (2018-12-20)&lt;br&gt;&lt;p&gt;Platform: x86_64-apple-darwin15.6.0 (64-bit)&lt;/p&gt;&lt;p&gt;OS: macOS High Sierra 10.13.6&lt;/p&gt;&lt;br&gt;
 
 &lt;hr&gt;
 
-&lt;span class="small"&gt;Built on : &lt;i class='fa fa-calendar' aria-hidden='true'&gt;&lt;/i&gt; 12-May-2019 at &lt;i class='fa fa-clock-o' aria-hidden='true'&gt;&lt;/i&gt; 20:38:45&lt;/span&gt;  
+&lt;span class="small"&gt;Built on : &lt;i class='fa fa-calendar' aria-hidden='true'&gt;&lt;/i&gt; 08-Oct-2019 at &lt;i class='fa fa-clock-o' aria-hidden='true'&gt;&lt;/i&gt; 14:32:12&lt;/span&gt;  
 
 &lt;b&gt;2019&lt;/b&gt; • [SciLifeLab](https://www.scilifelab.se/) • [NBIS](https://nbis.se/)
 ]
