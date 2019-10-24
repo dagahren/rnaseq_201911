@@ -7,21 +7,22 @@
 <meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 
 
 <title> Precourse</title>
 
-<script src="precourse_files/jquery-1.11.3/jquery.min.js"></script>
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="precourse_files/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
-<script src="precourse_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
-<script src="precourse_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
-<script src="precourse_files/bootstrap-3.3.5/shim/respond.min.js"></script>
-<script src="precourse_files/navigation-1.1/tabsets.js"></script>
-<link href="precourse_files/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
-<link href="precourse_files/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
 
 <style type="text/css">code{white-space: pre;}</style>
@@ -76,7 +77,7 @@ code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Inf
       if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
       var style = rule.style.cssText;
       // check if color or background-color is set
-      if (rule.style.color === '' || rule.style.backgroundColor === '') continue;
+      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
       // replace div.sourceCode by a pre.sourceCode rule
       sheets[i].deleteRule(j);
       sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
@@ -295,18 +296,6 @@ $(document).ready(function () {
 }
 </style>
 
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
-
 <!-- code folding -->
 
 
@@ -392,7 +381,7 @@ $(document).ready(function () {
 <p><br></p>
 <p>These are steps to be completed before the course.</p>
 <ul>
-<li><p>A remote computing cluster (UPPMAX) will be use for handling raw sequence data. A SUPR/SNIC account is needed to use UPPMAX resources. If you do not already have one, <a href="https://supr.snic.se/">create an account</a>. Log in to <a href="https://supr.snic.se/">SUPR/SNIC</a> and request membership to the project <strong>g2019008</strong>.</p></li>
+<li><p>A remote computing cluster (UPPMAX) will be use for handling raw sequence data. A SUPR/SNIC account is needed to use UPPMAX resources. If you do not already have one, <a href="https://supr.snic.se/">create an account</a>. Log in to <a href="https://supr.snic.se/">SUPR/SNIC</a> and request membership to the project <strong>g2019XXX</strong>.</p></li>
 <li><p>Make sure you can connect to the Uppmax cluster Rackham through a terminal. If you are on a PC, we recommend <a href="http://mobaxterm.mobatek.net">MobaXterm</a>. For MobaXterm users, it is recommended that you install the program and not use the portable version. Type <code>ssh -Y user@rackham.uppmax.uu.se</code> and then enter your password. The password will not be visible as you type.</p></li>
 <li><p>If you do not feel comfortable working in a terminal, please take the time to do the first three parts in the <em><a href="http://www.ee.surrey.ac.uk/Teaching/Unix/">Unix tutorial for beginners</a></em> before the workshop. Otherwise, it may be difficult for you to follow the exercises during the course.</p></li>
 <li><p>Make sure that you can read and write in the workshop folder. Go to <code>/proj/g2019008/nobackup/</code> and create a directory with your username. You will work inside this directory for the course. If you cannot write to the folder, the most likely reason is that you have not requested access to the workshop project via SUPR.</p></li>
@@ -458,6 +447,23 @@ $(document).ready(function () {
 
 
 </script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
